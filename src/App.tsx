@@ -7,6 +7,7 @@ import Tours from "./components/Tours/Tours";
 import Story from "./components/Story/Story";
 import Booking from "./components/Booking/Booking";
 import Footer from "./components/Footer/Footer";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (

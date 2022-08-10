@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="col-1-of-2">
-            <p>Built by <Link to="/">Jonas Schmedtmann</Link> for his online course ADVANCED CSS AND SASS. Copyright © by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!</p>
+            <p>Built by <Link to="/">Jonas Schmedtmann</Link> for his online course ADVANCED CSS AND SASS. Originally the website was build with plain html. I recreated the website using React for practicing my skills </p>
         </div>
       </div>
     </footer>
