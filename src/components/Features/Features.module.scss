@@ -1,0 +1,20 @@
+@import "../../sass/grid";
+@import "../../sass/variables";
+
+.features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../../img/hero.jpg");
+  background-size: cover;
+  z-index: 100;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+
+  & > *{
+    transform: skewY(7deg);
+  }
+}
