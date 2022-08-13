@@ -1,8 +1,22 @@
 import React, { FC } from "react";
-import "./Button.scss";
+import classes from "./Button.module.scss";
 
-const Button: FC<{ text: string, color?:string }> = (props) => {
-  return <button className={`button ${props.color || "white"}`}>{props.text}</button>;
+interface IProps {
+  text?: string;
+  variant?: string;
+  color?: string;
+  onClick?: () => void
+}
+
+const Button: FC<IProps> = (props) => {
+  if (props.variant === "close")
+    return <button className={classes.close} onClick={props.onClick}>&times;</button>;
+
+  return (
+    <button className={`${classes.button} ${props.color || classes.white}`}>
+      {props.text}
+    </button>
+  );
 };
 
 export default Button;

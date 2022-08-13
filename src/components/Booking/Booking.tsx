@@ -1,12 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import Button from "../Essentials/Button";
 import Heading from "../Essentials/Heading";
 import classes from "./Booking.module.scss";
 
-const Booking = () => {
+const Booking:FC<{onClose: () => void}> = (props) => {
+  
   return (
     <section className={classes.booking}>
       <div className={classes.row}>
+        <Button variant="close" onClick={props.onClose}/>
         <div className={classes.book}>
           <form>
             <Heading text="Start booking now!" />
@@ -20,7 +22,7 @@ const Booking = () => {
               <label htmlFor="email">Email address</label>
             </div>
 
-            <Button text="Next step" color="green"/>
+            <Button text="Next step" color="green" />
           </form>
         </div>
       </div>

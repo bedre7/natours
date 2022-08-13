@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
 import About from "./components/About/About";
@@ -7,9 +7,15 @@ import Tours from "./components/Tours/Tours";
 import Story from "./components/Story/Story";
 import Booking from "./components/Booking/Booking";
 import Footer from "./components/Footer/Footer";
-import Navigation from "./components/Navigation/Navigation";
 
 function App() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const closePopup = () => {
+    setShowPopup(false);
+    console.log(showPopup);
+  };
+
   return (
     <div className="App">
       <Layout>
@@ -17,7 +23,7 @@ function App() {
         <Features />
         <Tours />
         <Story />
-        <Booking />
+        <Booking onClose={closePopup} />
         <Footer />
       </Layout>
     </div>
