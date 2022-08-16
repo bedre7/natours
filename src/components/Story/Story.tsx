@@ -4,18 +4,18 @@ import classes from "./Story.module.scss";
 import Mary from "../../img/nat-8.jpg";
 import Jack from "../../img/nat-9.jpg";
 import Heading from "../Essentials/Heading";
-// import bgVideo from "../../img/video.mp4";
+import bgVideo from "../../img/video.mp4";
 
 const Story = () => {
   return (
     <section>
       <div className={classes["bg-video"]}>
-        {/* <video src={bgVideo} autoPlay muted loop /> */}
+        <video src={bgVideo} autoPlay muted loop />
       </div>
-      <Heading text="We make people genuinely happy"/>
+      <Heading text="We make people genuinely happy" />
       {stories.map((story) => {
         return (
-          <div className={classes.row}>
+          <div className={classes.row} key={story.id}>
             <div className={classes.story}>
               <figure>
                 <img src={story.image} alt="Person on tour" />
@@ -36,6 +36,7 @@ const Story = () => {
 
 const stories = [
   {
+    id: 1,
     image: Mary,
     name: "Mary Smith",
     title: "I had the best week ever with my family",
@@ -46,6 +47,7 @@ const stories = [
           consequatur ducimus quam nisi exercitationem omnis earum qui.`,
   },
   {
+    id: 2,
     image: Jack,
     name: "Jack Nilson",
     title: "Wow! My life is different now",

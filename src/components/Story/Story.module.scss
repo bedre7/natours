@@ -6,17 +6,21 @@ section {
   padding: 15rem 0;
   position: relative;
 
-  .bg-video{
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
+  .bg-video {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: -1;
-    opacity: .15;
+    opacity: 0.15;
     overflow: hidden;
   }
-  
+
   .story {
     width: 75%;
     margin: 0 auto;
@@ -29,6 +33,16 @@ section {
     text-align: left;
     transform: skewX(-12deg);
 
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+
     figure {
       width: 15rem;
       height: 15rem;
@@ -38,6 +52,10 @@ section {
       transform: translateX(-3rem) skewX(12deg);
       position: relative;
       overflow: hidden;
+
+      @include respond(phone) {
+        transform: translateX(-3rem) skewX(0);
+      }
 
       img {
         height: 100%;
@@ -62,6 +80,10 @@ section {
 
     .text {
       transform: skewX(12deg);
+
+      @include respond(phone) {
+        transform: skewX(0);
+      }
     }
 
     &:hover figcaption {

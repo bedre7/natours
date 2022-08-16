@@ -1,29 +1,30 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import Button from "../Essentials/Button";
 import Heading from "../Essentials/Heading";
 import Card from "./Card";
 import classes from "./Tours.module.scss";
 
-const Tours = () => {
+const Tours:FC<{onClick(): void}> = (props) => {
   return (
     <section className={classes.tours}>
       <Heading text="Most popular tours" />
       <div className={classes.row}>
         {cards.map((card) => {
           return (
-            <div className={classes["col-1-of-3"]}>
+            <div className={classes["col-1-of-3"]} key={card.id}>
               <Card
                 heading={card.heading}
                 price={card.price}
                 details={card.details}
                 color={card.color}
+                onClick={props.onClick}
               />
             </div>
           );
         })}
       </div>
       <div className="action">
-        <Button color="green" text="Discover All Tours" />
+        <Button color="green" text="Discover All Tours"/>
       </div>
     </section>
   );
@@ -33,6 +34,7 @@ export default Tours;
 
 const cards = [
   {
+    id: 1,
     heading: "The Sea Explorer",
     price: 297,
     color: "yellow",
@@ -45,6 +47,7 @@ const cards = [
     ],
   },
   {
+    id: 2,
     heading: "The Forest Hiker",
     price: 497,
     color: "green",
@@ -57,6 +60,7 @@ const cards = [
     ],
   },
   {
+    id: 3,
     heading: "The Snow Adventurer",
     price: 897,
     color: "blue",

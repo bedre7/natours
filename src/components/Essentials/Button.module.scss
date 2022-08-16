@@ -1,6 +1,6 @@
 @import "../../sass/variables";
 
-.close{
+.close {
   color: $color-grey-dark;
   background-color: transparent;
   border: none;
@@ -11,9 +11,9 @@
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 
-  &:hover{
+  &:hover {
     color: $color-grey-dark-3;
   }
 }

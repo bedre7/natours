@@ -5,6 +5,7 @@ Medium green: #55c57a;
 Dark green: #28b485;
 */
 @import './sass/mixins';
+@import './sass/variables';
 
 *,
 *::after,
@@ -16,13 +17,13 @@ Dark green: #28b485;
 
 html{
   //  This defines what 1 rem is 
-  font-size: 62.5%; // 1 rem = 10px olsun; 10px/16px = 62.5%
+  font-size: 62.5%;               // 1 rem = 10px olsun; 10px/16px = 62.5%
 
-  @include respond(tab-land){ //width < 900 ?
-    font-size: 56.25%;     //let 1 rem ve 9px -> 9/16
+  @include respond(tab-land){     //width < 900 ?
+    font-size: 56.25%;            //let 1 rem ve 9px -> 9/16
   }
-  @include respond(tab-port){ //width < 600 ?
-    font-size: 50%;     //let 1rem be 8px -> 8/16 = 0.5
+  @include respond(tab-port){     //width < 600 ?
+    font-size: 50%;               //let 1rem be 8px -> 8/16 = 0.5
   }
   @include respond(big-desktop){
     font-size: 75%;
@@ -36,4 +37,12 @@ body {
   color: #777;
   padding: 3rem; 
   box-sizing: border-box;
+
+  @include respond(tab-port){     //width < 600 ?
+    padding: 0;              //let 1rem be 8px -> 8/16 = 0.5
+  }
+}
+
+::selection{
+  background-color: $color-primary;
 }

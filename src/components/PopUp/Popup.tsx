@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Booking from '../Booking/Booking'
 import classes from './Popup.module.scss'
 
-const Popup = () => {
+const Popup:FC<{onClose(): void}> = (props) => {
   return (
     <div className={classes.popup}>
         <div className={classes.content}>
-            {/* <Booking/> */}
+            <Booking onClose={props.onClose}/>
         </div>
     </div>
   )

@@ -13,7 +13,7 @@ const Button: FC<IProps> = (props) => {
     return <button className={classes.close} onClick={props.onClick}>&times;</button>;
 
   return (
-    <button className={`${classes.button} ${props.color || classes.white}`}>
+    <button className={`${classes.button} ${props.color || classes.white}`} onClick={props.onClick}>
       {props.text}
     </button>
   );

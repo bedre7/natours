@@ -7,6 +7,7 @@ interface IProps {
   heading: string;
   details: string[];
   price: number;
+  onClick: () => void;
 }
 
 const Card: FC<IProps> = (props) => {
@@ -19,8 +20,8 @@ const Card: FC<IProps> = (props) => {
         </h4>
         <div className="details">
           <ul>
-            {props.details.map((item) => (
-              <li>{item}</li>
+            {props.details.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
@@ -32,7 +33,7 @@ const Card: FC<IProps> = (props) => {
             <p className="price">${props.price}</p>
           </div>
           <div className="action">
-            <Button text="Book now!" />
+            <Button text="Book now!" onClick={props.onClick}/>
           </div>
         </div>
       </div>
